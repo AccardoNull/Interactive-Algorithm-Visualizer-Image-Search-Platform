@@ -4,7 +4,8 @@ A Python project of a web app where users can run algorithms step-by-step and vi
 Completed features:
 - KMP visualizer
 - backend server using Python, FastAPI and Uvicorn
-- GitHub Actions automated pytest script
+- GitHub Actions CI/CD pipeline - automated pytest script
+- React + Vite frontend for KMP visualizer
+- GitHub Actions CI/CD pipeline - automated frontend testing script
 
 Ongoing development: 
-- React + Vite frontend for KMP visualizer
