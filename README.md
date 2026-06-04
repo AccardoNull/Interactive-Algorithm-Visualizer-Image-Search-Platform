@@ -7,5 +7,7 @@ Completed features:
 - GitHub Actions CI/CD pipeline - automated pytest script
 - React + Vite frontend for KMP visualizer
 - GitHub Actions CI/CD pipeline - automated frontend testing script
-
+![screenshot1](ImageFolder/Screenshot1.jpg)
+![screenshot2](ImageFolder/Screenshot2.jpg)
+![screenshot3](ImageFolder/Screenshot3.jpg)
 Ongoing development: 
