@@ -32,7 +32,7 @@ Backend
 - Uvicorn
 
 Development Tools
-- GitHub & Git
+- GitHub/Git
 - VS Code
 - GitHub Actions
 - Pytest
@@ -43,3 +43,5 @@ Development Tools
 ![screenshot3](ImageFolder/Screenshot3.jpg)
 
 ## Ongoing development
+- DFA simulation
+- local file/image search
