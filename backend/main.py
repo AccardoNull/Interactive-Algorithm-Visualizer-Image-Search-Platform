@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from fastapi.staticfiles import StaticFiles
 from algorithms.kmp import kmp_steps, kmp_contains
 from fastapi.middleware.cors import CORSMiddleware
+import subprocess
 
 app = FastAPI()
 
@@ -18,6 +19,9 @@ app.add_middleware(
 class KMPRequest(BaseModel):
     text: str
     pattern: str
+
+class OpenFileRequest(BaseModel):
+    filepath: str
 
 @app.get("/")
 def root():
@@ -53,3 +57,12 @@ def search_images(q: str):
         "count": len(results),
         "results": results
     }
+
+@app.post("/open-file")
+def open_file(request: OpenFileRequest):
+
+    subprocess.run(
+        ["explorer", f"/select,{request.filepath}"]
+    )
+
+    return {"status": "success"}

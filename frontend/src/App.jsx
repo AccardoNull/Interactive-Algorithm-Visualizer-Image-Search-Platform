@@ -37,6 +37,18 @@ function App() {
   setResultCount(data.count);
 }
 
+  async function openFileLocation(filepath) {
+  await fetch("http://127.0.0.1:8000/open-file", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      filepath: filepath,
+    }),
+  });
+}
+
   return (
     <div className="container">
       <h1>KMP Visualizer</h1>
@@ -126,7 +138,9 @@ function App() {
             />
           </a>
 
-           <h3 className="image-filename">
+           <h3 className="image-filename"
+               style={{cursor: "pointer"}}
+               onClick={() => openFileLocation(image.filepath)}>
                {image.filename}
            </h3>
            <p className="image-description">
