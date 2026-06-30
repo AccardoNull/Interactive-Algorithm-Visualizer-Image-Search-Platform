@@ -9,9 +9,10 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [resultCount, setResultCount] = useState(0);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   async function runKMP() {
-    const response = await fetch("http://127.0.0.1:8000/kmp", {
+    const response = await fetch("${API_BASE_URL}/kmp", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +29,7 @@ function App() {
 
   async function searchImages() {
   const response = await fetch(
-    `http://127.0.0.1:8000/search?q=${encodeURIComponent(searchQuery)}`
+    `${API_BASE_URL}/search?q=${encodeURIComponent(searchQuery)}`
   );
 
   const data = await response.json();
@@ -38,7 +39,7 @@ function App() {
 }
 
   async function openFileLocation(filepath) {
-  await fetch("http://127.0.0.1:8000/open-file", {
+  await fetch("${API_BASE_URL}/open-file", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -128,12 +129,12 @@ function App() {
        {searchResults.map((image) => (
          <div key={image.id} className="image-card">
            <a
-            href={`http://127.0.0.1:8000/preview/${image.filename}`}
+            href={`${API_BASE_URL}/preview/${image.filename}`}
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
-              src={`http://127.0.0.1:8000${image.url}`}
+              src={`${API_BASE_URL}${image.url}`}
               alt={image.description}
             />
           </a>
