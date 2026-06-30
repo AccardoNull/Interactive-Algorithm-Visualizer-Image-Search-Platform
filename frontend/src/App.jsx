@@ -116,7 +116,7 @@ function App() {
       )}
       <hr />
 
-     <h2>Image Search</h2>
+     <h1>Image Search</h1>
 
      <input
        value={searchQuery}
