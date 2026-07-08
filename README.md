@@ -1,6 +1,6 @@
 # Image-Search-and-Utility-Platform/Algorithm Visualizer
 ## Overview
-An interactive full-stack web application that started as a visualizer showcases KMP algorithm execution step-by-step to help users understand complex computational processes, then evolved into a platform that utilizes the algorithm's string matching function for efficient image file search and convertion. The long-term goal of the platform is to implenment more utility functions such as external image search API integration and file resize/compression, as well as support additional algorithms including DFA simulation and graph traversal algorithms (BFS/DFS).
+An interactive full-stack web application that started as a visualizer showcases KMP algorithm execution step-by-step to help users understand complex computational processes, then evolved into a platform that utilizes the algorithm's string matching function for efficient image file search and conversion. The long-term goal of the platform is to implenment more utility functions such as external image search API integration and file resize/compression, as well as support additional algorithms including DFA simulation and graph traversal algorithms (BFS/DFS).
 
 ## Demo
 Live Demo: https://interactive-algorithm-visualizer-im.vercel.app/  
@@ -31,7 +31,7 @@ Built with a React frontend and FastAPI backend, the application generates detai
 
 An interactive full-stack application that enables users to locate images files using keyword-based pattern matching across filenames, tags, and descriptive metadata, then convert selected images to different formats. The framework leverages the Knuth-Morris-Pratt (KMP) string matching algorithm to efficiently identify relevant records and return searchable results through a responsive graphical interface.
 
-Built with a React frontend and FastAPI backend, the application automatically indexes image assets, extracts searchable metadata from filenames, and generates a structured search database for efficient retrieval, with Docker containerization for fast deployment and Pillow for format convertions, as well as cloud deployment through Railway and Vercel. User queries are processed through a custom search engine that performs pattern matching against indexed file records and displays matching images with associated metadata. The project aims to bridge algorithmic pattern matching with practical search engine functionality while providing a foundation for future enhancements such as AI-generated image captions and desktop search capabilities.
+Built with a React frontend and FastAPI backend, the application automatically indexes image assets, extracts searchable metadata from filenames, and generates a structured search database for efficient retrieval, with Docker containerization for fast deployment and Pillow for format conversions, as well as cloud deployment through Railway and Vercel. User queries are processed through a custom search engine that performs pattern matching against indexed file records and displays matching images with associated metadata. The project aims to bridge algorithmic pattern matching with practical search engine functionality while providing a foundation for future enhancements such as AI-generated image captions and desktop search capabilities.
 
 #### Features
 
@@ -45,7 +45,7 @@ Built with a React frontend and FastAPI backend, the application automatically i
 - Clickable image previews and filenames that link directly to original image assets through custom FastAPI preview and open file locations through Windows Explorer integration
   - Added a custom FastAPI preview route to serve image assets with inline display headers for consistent browser preview behavior across JPG, PNG, and WebP files.
   - Windows Explorer integration is only supported in local Windows execution mode, while Dockerized/live demo supports KMP visualization, image search, and preview.
-- Format convertion options for uploaded files and search results using Pillow
+- Format conversion options for uploaded files and search results using Pillow
 - Automated testing and continuous integration using Pytest, Git, and GitHub Actions
 
 #### Current Architecture
