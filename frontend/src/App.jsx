@@ -107,7 +107,10 @@ function App() {
 
   return (
     <div className="container">
-      <h1>KMP Visualizer</h1>
+      <h1>Local Image Utility Platform</h1>
+      <hr />
+
+      <h2>KMP Visualizer</h2>
 
       <label>Text:</label>
       <input value={text} onChange={(e) => setText(e.target.value)} />
@@ -168,7 +171,7 @@ function App() {
       )}
       <hr />
 
-     <h1>Image Search</h1>
+     <h2>Image Search</h2>
 
      <input
        value={searchQuery}
@@ -245,7 +248,7 @@ function App() {
      </div>
      <hr />
 
-     <h1>Image Format Converter</h1>
+     <h2>Image Format Converter</h2>
 
      <input
        type="file"
