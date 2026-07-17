@@ -1,10 +1,10 @@
 # Image-Search-and-Utility-Platform/Algorithm Visualizer
 ## Overview
-An interactive full-stack web application that started as a visualizer showcases KMP algorithm execution step-by-step to help users understand complex computational processes, then evolved into a platform that utilizes the algorithm's string matching function for efficient image file search and conversion. The long-term goal of the platform is to implenment more utility functions such as external image search API integration and file resize/compression, as well as support additional algorithms including DFA simulation and graph traversal algorithms (BFS/DFS).
+An interactive full-stack web application that started as a visualizer showcases KMP algorithm execution step-by-step to help users understand complex computational processes, then evolved into a platform that utilizes the algorithm's string matching function for efficient local/external image file search and conversion. The long-term goal of the platform is to implenment more image utility functions, as well as support visualization of additional algorithms.
 
 ## Demo
 Live Demo: https://interactive-algorithm-visualizer-im.vercel.app/  
-The search function on live website is currently limited to the sample images stored in the repository, under backend/static/images.
+- The local image search function on live website is currently limited to the sample images stored in the repository, under backend/static/images.
 
 ## Completed features
 ### KMP visualizer
@@ -29,14 +29,17 @@ Built with a React frontend and FastAPI backend, the application generates detai
 
 ### Image Search and Utility Platform
 
-An interactive full-stack application that enables users to locate images files using keyword-based pattern matching across filenames, tags, and descriptive metadata, then convert selected images to different formats. The framework leverages the Knuth-Morris-Pratt (KMP) string matching algorithm to efficiently identify relevant records and return searchable results through a responsive graphical interface.
+An interactive full-stack application that enables users to perform local/online image search using keyword-based pattern matching across filenames, tags, and descriptive metadata, and convert the search results/upload images to selected formats. The framework leverages the Knuth-Morris-Pratt (KMP) string matching algorithm to efficiently identify relevant records and return searchable results through a responsive graphical interface.
 
-Built with a React frontend and FastAPI backend, the application automatically indexes image assets, extracts searchable metadata from filenames, and generates a structured search database for efficient retrieval, with Docker containerization for fast deployment and Pillow for format conversions, as well as cloud deployment through Railway and Vercel. User queries are processed through a custom search engine that performs pattern matching against indexed file records and displays matching images with associated metadata. The project aims to bridge algorithmic pattern matching with practical search engine functionality while providing a foundation for future enhancements such as AI-generated image captions and desktop search capabilities.
+Built with a React frontend and FastAPI backend, the application automatically indexes image assets and generates a structured search database for efficient retrieval, with format conversions done through Pillow library. The app is also Dockerized and deployed to cloud platgforms Railway and Vercel, and integrated with external image search APIs using SerpApi for online search functionality. User queries are processed through a custom search engine that performs pattern matching against indexed file records and displays matching images with associated metadata. 
+
+The project aims to bridge algorithmic pattern matching with practical search engine functionality while providing a foundation for future enhancements such as image resizing/compression, AI-generated image captions, and desktop search capabilities.
 
 #### Features
 
 - Keyword-based image file search using the KMP string matching algorithm across filenames, tags, descriptions, and indexed file metadata
   - Added a token-based search layer for fuzzy matching. KMP powers exact substring matching, while the search layer handles tokenization, ranking, and flexible query matching.
+  - Integrated external image search APIs for broader image retrieval, with security features including backend-only API key management, temporary downloads/cleanup , URL/content-type validation, and file size limits.
 - FastAPI backend for search processing, indexing, and metadata retrieval
 - React-based frontend with dynamic query submission and result rendering
 - Static asset serving for image storage and retrieval
@@ -71,18 +74,19 @@ React Search Interface
 ![screenshot5](ImageFolder/Screenshot5.jpg)
 ![screenshot6](ImageFolder/Screenshot6.jpg)
 
-## Local Usage
-### Set up frontend and backend server
-Local Windows execution mode
+## Local Setup
+### Activate frontend and backend servers
+Local Windows execution mode 
 - cd backend
   - .\\.venv\Scripts\Activate.ps1
     - uvicorn main:app --reload
 - cd frontend
   - npm run dev
+or  
 Docker
 - docker compose up --build
 
-### Image metadata indexing
+### Local image metadata indexing
 Store images under backend/static/images, then run:
 - cd backend
   - py index_images.py
@@ -101,6 +105,7 @@ Backend
 - REST APIs
 - Uvicorn
 - Pillow
+- SerpApi
 
 Development Tools
 - GitHub/GitHub Actions
